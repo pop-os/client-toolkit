@@ -287,7 +287,7 @@ impl KeyboardHandler for SimpleWindow {
         keysyms: &[u32],
     ) {
         if self.window.wl_surface() == surface {
-            println!("Keyboard focus on window with pressed syms: {:?}", keysyms);
+            println!("Keyboard focus on window with pressed syms: {keysyms:?}");
             self.keyboard_focus = true;
         }
     }
