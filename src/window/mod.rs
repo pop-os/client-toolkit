@@ -703,6 +703,10 @@ impl<F: Frame + 'static> Window<F> {
     pub fn start_interactive_move(&self, seat: &wl_seat::WlSeat, serial: u32) {
         self.shell_surface.move_(seat, serial);
     }
+
+    pub fn start_interactive_resize(&self, seat: &wl_seat::WlSeat, serial: u32, edges: ResizeEdge) {
+        self.shell_surface.resize(seat, serial, edges);
+    }
 }
 
 impl<F: Frame> Drop for Window<F> {
